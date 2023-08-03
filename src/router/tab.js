@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Home, Favorite, Collections, Upload, Personal } from '../pages';
+import { CustomTabBarButton } from '../components/TabBar/CustomTabBarButton';
 
 const Tab = createBottomTabNavigator()
 
@@ -13,7 +14,7 @@ export function Tabs() {
                 options={{
                     tabBarIcon: ({color, size, focused}) => {
                         if (focused){
-                            <AntDesign name="home" size={size} color="#000" />
+                           return <AntDesign name="home" size={size} color="#FF6745" />
                         }
                         return <AntDesign name="home" size={size} color={color} />
                     }
@@ -26,7 +27,7 @@ export function Tabs() {
                 options={{
                     tabBarIcon: ({color, size, focused}) => {
                         if (focused) {
-                            return <Ionicons name="folder-outline" size={24} color="#000" />
+                            return <Ionicons name="folder-outline" size={24} color="#FF6745" />
                         }
                         return <Ionicons name="folder-outline" size={size} color={color} />
                     }
@@ -37,23 +38,25 @@ export function Tabs() {
                 name='Upload'
                 component={Upload}
                 options={{
-                    tabBarIcon: ({color, size, focused}) => {
+                    tabBarIcon: ({size, focused}) => {
                         if (focused) { 
-                            return <AntDesign name="plus" size={24} color="#000" />
+                            return <AntDesign name="plus" size={24} color="#fff" />
                         }
-                        return <AntDesign name="plus" size={size} color={color} />
+                        return <AntDesign name="plus" size={size} color="#fff" />
+                    },
+                    tabBarButton: (props) => {
+                        return <CustomTabBarButton {...props} />
                     }
                 }}
             />
             
-
             <Tab.Screen 
             name="Favorites" 
             component={Favorite}
             options={{
                 tabBarIcon: ({color, size, focused}) => {
                     if (focused){
-                        return <Ionicons name="heart" color="#FF4141" size={size}/>
+                        return <Ionicons name="heart-outline" color="#FF6745" size={size}/>
                     }
                     return  <Ionicons name="heart-outline" color={color} size={size}/>
                 }
@@ -66,7 +69,7 @@ export function Tabs() {
                 options={{
                     tabBarIcon: ({color, size, focused}) => {
                         if (focused) {
-                            return <Ionicons name="person-outline" size={24} color="black" />
+                            return <Ionicons name="person-outline" size={24} color="#FF6745" />
                         }
                         return <Ionicons name="person-outline" size={size} color={color} />
                     }
@@ -83,7 +86,14 @@ const screenOptions = {
     tabBarShowLabel: false,
     tabBarActiveTintColor: "#121212",
     tabBarStyle:{
-        backgroundColor: "#fff",
-        borderTopWidth:0
+        position: 'absolute',
+        bottom: 15,
+        left: 10,
+        right: 10,
+        height: 70,
+        width: 340,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 30
     }
 }
