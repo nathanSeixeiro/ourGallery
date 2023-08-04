@@ -1,22 +1,31 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+
+import { Logo } from '../components/Logo/Logo';
+import { InputSearch } from '../components/InputSearch/InputSearch';
 
 export function Home({navigation}) {
   return (
-    <View style={style.container}>
-        <Text>Home screen</Text>
-        <Button 
-            title='Click here'
-            onPress={() => alert('Home!')}
-        />
+    <SafeAreaView style={style.container}>
+        <Logo />
+    <View style={style.header}>
+        <InputSearch />
+        {/* teclado sobre junto com tabs*/}
     </View>
+    </SafeAreaView>
   );
 }
 
 const style = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        paddingTop: 35,
+        paddingStart: 14,
+        paddingEnd: 14,
+        marginRight: 30
+    },
+    header:{
+      left: 20
     }
 })
