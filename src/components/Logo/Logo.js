@@ -1,12 +1,11 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
+import img from '../../assets/logo2black.png';
 
-// const logo = '../../assets/logo 2 black.png'
 export function Logo(){
     return (
         <View style={style.header}>
-            <Text style={style.text}>Didis e</Text>
-            <Text style={style.text}>Gatinho</Text>
-            {/* <Image source={logo} /> */}
+            <Image source={img}
+            style={style.img} />
         </View>
     )
 }
@@ -19,8 +18,8 @@ const style = StyleSheet.create({
         paddingRight:20,
         marginBottom: 6
     },
-    text: {
-      fontSize: 26,
-      fontWeight: "bold",
+    img: {
+        width: 135,
+        height: 66
     }
 })
