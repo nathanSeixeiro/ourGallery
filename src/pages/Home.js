@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 
 import { Logo } from '../components/Logo/Logo';
 import { InputSearch } from '../components/InputSearch/InputSearch';
@@ -11,7 +11,7 @@ export function Home({navigation}) {
     <View style={style.header}>
         <InputSearch />
         {/* teclado sobre junto com tabs*/}
-    </View>
+    </View>  
     </SafeAreaView>
   );
 }
@@ -21,11 +21,11 @@ const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 35,
-        paddingStart: 14,
-        paddingEnd: 14,
+        paddingLeft: 14,
+        paddingRight: 14,
         marginRight: 30
     },
     header:{
       left: 20
-    }
+    },
 })
