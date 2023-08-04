@@ -1,10 +1,10 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
-import img from '../../assets/logo2black.png';
+import logo from '../../assets/logo2black.png';
 
 export function Logo(){
     return (
         <View style={style.header}>
-            <Image source={img}
+            <Image source={logo}
             style={style.img} />
         </View>
     )
