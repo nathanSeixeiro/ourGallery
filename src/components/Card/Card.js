@@ -9,6 +9,7 @@ export function Card({ color, width, aspectRatio }){
           height: width * aspectRatio,
           marginBottom: 10,
           borderRadius: 10
-        }}></View>
+        }}
+      />
     );
   };
