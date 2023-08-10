@@ -74,7 +74,7 @@ export function Home({navigation}) {
     <SafeAreaView style={style.container}>
     <View style={style.header}>
         <Logo />
-        {/* <InputSearch /> */}
+        <InputSearch />
         {/* teclado sobre junto com tabs*/}
     </View>  
 
